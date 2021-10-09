@@ -1,8 +1,12 @@
 import React from 'react'
 import './navbar.css'
 import { ArrowDropDown } from '@material-ui/icons'
+import { useSelector } from 'react-redux'
+
 
 export default function NavBar() {
+
+    const name = useSelector(state => state.user.username)
     return (
         <div className="navbar">
             <div className="navbarContainer">
@@ -15,7 +19,7 @@ export default function NavBar() {
                 <input type="text" placeholder="search for something"></input>
                 <div className="profile">
                     <img className="profileimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhyU6CVQ16FTCRV3u7AaQAiS53wwqfShSCkw&usqp=CAU" alt=""></img>
-                    <span>John</span>
+                    <span>{name}</span>
                     <ArrowDropDown className="arrow" />
                 </div>
             </div>

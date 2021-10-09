@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import UpdateWar from '../../pages/updateWarning/UpdateWar'
 import './updatebar.css'
 
 export default function UpdateBar() {
+
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const user = useSelector(state => state.user)
     return (
         <div className="updatebar">
             <div className="updateContainer">
@@ -16,10 +21,10 @@ export default function UpdateBar() {
                     </div>
                     <form className="formContent">
                         <label>Username</label>
-                        <input type="text" placeholder="John"></input>
+                        <input type="text" placeholder={user.username} onChange={e => setName(e.target.value)}></input>
 
                         <label>Email</label>
-                        <input type="text" placeholder="John123@gmail.com"></input>
+                        <input type="text" placeholder={user.email} onChange={e => setEmail(e.target.value)}></input>
 
                         <label>Password</label>
                         <input type="password"></input>
