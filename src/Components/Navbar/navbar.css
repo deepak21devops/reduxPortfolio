@@ -6,6 +6,7 @@
     border-bottom: 1px solid rgb(219, 211, 211);
     position: sticky;
     top:0;
+    z-index: 1;
 }
 
 .navbarContainer{

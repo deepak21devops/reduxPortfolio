@@ -8,3 +8,30 @@
 
     padding:20px;
 }
+
+.gallery>img{
+    width: 300px;
+    height: 130px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+.gallery{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dispbtn{
+    width: 100%;
+    margin-top: 20px;
+}
+.seebtn{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: center;
+    height: 30px;
+    border:none;
+    background-color: rgb(182, 174, 174);
+}
