@@ -1,4 +1,9 @@
 .updatebar{
     flex:2;
+    border-right: 1px solid rgb(172, 158, 158);
+}
+
+.updateContainer{
     
+    padding:20px;
 }

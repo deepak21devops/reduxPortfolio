@@ -1,10 +1,13 @@
 import React from 'react'
+import UpdateWar from '../../pages/updateWarning/UpdateWar'
 import './updatebar.css'
 
 export default function UpdateBar() {
     return (
         <div className="updatebar">
-            Update
+            <div className="updateContainer">
+                <UpdateWar />
+            </div>
         </div>
     )
 }

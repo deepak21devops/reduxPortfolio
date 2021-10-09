@@ -1,0 +1,29 @@
+.updateWar{
+    border-bottom: 1px solid rgb(219, 211, 211);
+}
+
+.warningContainer{
+    padding:20px;
+}
+
+.updateTitle{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.para{
+    background-color: rgb(238, 212, 146);
+    padding:10px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.delbtn{
+    padding:5px 10px;
+    background-color: rgb(230, 144, 158);
+    border-radius: 10px;
+    color:white;
+    border:none;
+}
