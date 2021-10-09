@@ -1,6 +1,7 @@
 .Container{
   display: flex;
-  top:calc(100vh-75px);
-  position: sticky;
+ /* height: 100vh; */
+ position: sticky;
+ height:calc(100vh-75px);
   
 }
