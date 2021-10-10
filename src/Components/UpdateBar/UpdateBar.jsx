@@ -10,7 +10,7 @@ export default function UpdateBar() {
     const [first, setFirst] = useState("")
     const [mail, setMail] = useState("")
 
-    const data = useSelector(state => state.repo.userInfo)
+    const data = useSelector(state => state.repo)
     console.log(data)
 
     const handleUpdate = (e) => {
@@ -34,16 +34,19 @@ export default function UpdateBar() {
                     </div>
                     <form className="formContent">
                         <label>Username</label>
-                        <input type="text" placeholder={data.username} onChange={e => setFirst(e.target.value)}></input>
+                        <input type="text" placeholder={data.userInfo.username} onChange={e => setFirst(e.target.value)}></input>
 
                         <label>Email</label>
-                        <input type="text" placeholder={data.email} onChange={e => setMail(e.target.value)}></input>
+                        <input type="text" placeholder={data.userInfo.email} onChange={e => setMail(e.target.value)}></input>
 
                         <label>Password</label>
                         <input type="password"></input>
 
-                        <button className="updbtn" onClick={e => handleUpdate(e)}>Update</button>
+                        <button className={data.pending ? "updbtn active" : "updbtn"} onClick={e => handleUpdate(e)}>Update</button>
+
                     </form>
+                    {data.error && <span className="error">Error Updating data</span>}
+                    {data.pending === false && <span className="success">Data updated successfully</span>}
                 </div>
             </div>
         </div>

@@ -1,11 +1,9 @@
 import React from 'react'
 import './updatewar.css'
-import { remove } from '../redux/userSlicer'
-import { useDispatch } from 'react-redux'
+
 
 export default function UpdateWar() {
 
-    const dispatch = useDispatch()
 
     const handleDelete = (e) => {
         e.preventDefault()

@@ -7,7 +7,7 @@ export const userSlicer = createSlice({
             username: "Florence Pugh",
             email: "florence99123@gmail.com"
         },
-        pending: false,
+        pending: null,
         error: false,
 
     },
