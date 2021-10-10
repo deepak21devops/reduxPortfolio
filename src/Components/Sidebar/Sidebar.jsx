@@ -69,12 +69,8 @@ export default function Sidebar() {
 
                     <li className="menuItems">
                         <ExitToAppOutlined className="menuicon" />
-                        <span>Logout ({name.first})</span>
+                        <span>Logout ({name.username})</span>
                     </li>
-
-
-
-
                 </ul>
             </div>
         </div>

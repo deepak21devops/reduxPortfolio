@@ -3,19 +3,21 @@ import UpdateWar from '../updateWarning/UpdateWar'
 import './updatebar.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { apicall } from '../redux/apicall'
+import { userUpdate } from '../redux/userSlicer'
+
 export default function UpdateBar() {
 
     const dispatch = useDispatch()
 
-    const [first, setFirst] = useState("")
-    const [mail, setMail] = useState("")
+    const [username, setFirst] = useState("")
+    const [email, setMail] = useState("")
 
     const data = useSelector(state => state.repo)
     console.log(data)
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        apicall({ first, mail }, dispatch)
+        dispatch(userUpdate({ username, email }))
 
 
 
@@ -46,7 +48,7 @@ export default function UpdateBar() {
 
                     </form>
                     {data.error && <span className="error">Error Updating data</span>}
-                    {data.pending === false && <span className="success">Data updated successfully</span>}
+                    {data.pending === false && (<span className="success">Data updated successfully</span>)}
                 </div>
             </div>
         </div>

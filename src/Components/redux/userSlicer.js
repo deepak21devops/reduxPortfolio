@@ -1,4 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
+
+export const userUpdate = createAsyncThunk("users/update", async (user) => {
+
+    const res = await axios.post("http://localhost:8800/apicall/users/123/update", user)
+    return res.data
+})
 
 export const userSlicer = createSlice({
     name: "repo",
@@ -13,22 +20,21 @@ export const userSlicer = createSlice({
     },
     reducers: {
 
-        updateStart: (state) => {
+    },
+
+    extraReducers: {
+        [userUpdate.pending]: (state) => {
             state.pending = true
             state.error = false
         },
-
-        updateSuccess: (state, action) => {
+        [userUpdate.fulfilled]: (state, action) => {
             state.pending = false
             state.userInfo = action.payload
         },
-
-        updateError: (state) => {
+        [userUpdate.rejected]: (state) => {
             state.error = true;
-            state.pending = false;
+            state.pending = null;
         }
-
-
     }
 })
 
