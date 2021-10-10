@@ -1,13 +1,24 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import UpdateWar from '../../pages/updateWarning/UpdateWar'
+import UpdateWar from '../updateWarning/UpdateWar'
 import './updatebar.css'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { update } from '../redux/userSlicer'
 export default function UpdateBar() {
 
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const user = useSelector(state => state.user)
+    const dispatch = useDispatch()
+
+    const [first, setFirst] = useState("")
+    const [mail, setMail] = useState("")
+
+    const data = useSelector(state => state.repo)
+    
+    const handleUpdate = (e) => {
+        e.preventDefault()
+
+        dispatch(update({ first, mail }))
+
+    }
+
     return (
         <div className="updatebar">
             <div className="updateContainer">
@@ -21,15 +32,15 @@ export default function UpdateBar() {
                     </div>
                     <form className="formContent">
                         <label>Username</label>
-                        <input type="text" placeholder={user.username} onChange={e => setName(e.target.value)}></input>
+                        <input type="text" placeholder={data.username} onChange={e => setFirst(e.target.value)}></input>
 
                         <label>Email</label>
-                        <input type="text" placeholder={user.email} onChange={e => setEmail(e.target.value)}></input>
+                        <input type="text" placeholder={data.email} onChange={e => setMail(e.target.value)}></input>
 
                         <label>Password</label>
                         <input type="password"></input>
 
-                        <button className="updbtn">Update</button>
+                        <button className="updbtn" onClick={e => handleUpdate(e)}>Update</button>
                     </form>
                 </div>
             </div>

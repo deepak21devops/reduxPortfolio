@@ -6,7 +6,10 @@ import { useSelector } from 'react-redux'
 
 export default function NavBar() {
 
-    const name = useSelector(state => state.user.username)
+    const name = useSelector(state => state.repo.username)
+
+
+
     return (
         <div className="navbar">
             <div className="navbarContainer">
