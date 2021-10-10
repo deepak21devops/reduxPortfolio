@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux'
 
 export default function Sidebar() {
 
-    const name = useSelector(state => state.repo.username)
+    const name = useSelector(state => state.repo.userInfo)
 
     return (
         <div className="sidebar">
@@ -69,7 +69,7 @@ export default function Sidebar() {
 
                     <li className="menuItems">
                         <ExitToAppOutlined className="menuicon" />
-                        <span>Logout ({name})</span>
+                        <span>Logout ({name.first})</span>
                     </li>
 
 

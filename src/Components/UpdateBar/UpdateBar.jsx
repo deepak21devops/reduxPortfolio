@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import UpdateWar from '../updateWarning/UpdateWar'
 import './updatebar.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { update } from '../redux/userSlicer'
+import { apicall } from '../redux/apicall'
 export default function UpdateBar() {
 
     const dispatch = useDispatch()
@@ -10,12 +10,14 @@ export default function UpdateBar() {
     const [first, setFirst] = useState("")
     const [mail, setMail] = useState("")
 
-    const data = useSelector(state => state.repo)
-    
+    const data = useSelector(state => state.repo.userInfo)
+    console.log(data)
+
     const handleUpdate = (e) => {
         e.preventDefault()
+        apicall({ first, mail }, dispatch)
 
-        dispatch(update({ first, mail }))
+
 
     }
 

@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux'
 
 export default function NavBar() {
 
-    const name = useSelector(state => state.repo.username)
+    const name = useSelector(state => state.repo.userInfo)
+    console.log(name)
 
 
 
@@ -22,7 +23,7 @@ export default function NavBar() {
                 <input type="text" placeholder="search for something"></input>
                 <div className="profile">
                     <img className="profileimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhyU6CVQ16FTCRV3u7AaQAiS53wwqfShSCkw&usqp=CAU" alt=""></img>
-                    <span>{name}</span>
+                    <span>{name.first}</span>
                     <ArrowDropDown className="arrow" />
                 </div>
             </div>

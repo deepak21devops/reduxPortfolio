@@ -9,7 +9,7 @@ export default function UpdateWar() {
 
     const handleDelete = (e) => {
         e.preventDefault()
-        dispatch(remove())
+        // dispatch(remove())
 
 
     }
